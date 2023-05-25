@@ -1,0 +1,13 @@
+div {
+    width: 1440px;
+    height: 900px;
+    /* height: 50px; /
+    background-color: blue;
+}
+
+/ Media query / Conditional CSS */
+@media (max-width: 1440px) {
+    div {
+        background-color: red;
+    }
+}

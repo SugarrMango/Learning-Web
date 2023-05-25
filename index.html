@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media queries</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 2560px;
+        height: 1440px;
+        /* height: 50px; */
+        background-color: red;
+      }
+
+      div {
+        width: 1440px;
+        height: 900px;
+        background-color: blue;
+      }
+
+      @media (min-width: 1440px) {
+        div {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1366px by 768px (HD) -->
+    <!-- 1440px by 900px (HD) -->
+    <!-- 1920px by 1080px (Full HD) -->
+    <!-- 2560px by 1440px (2K) -->
+    <!-- 3840px by 2160px (4K) -->
+
+    <!-- <p>Some text here</p> -->
+    <div>This is some div</div>
+  </body>
+</html>

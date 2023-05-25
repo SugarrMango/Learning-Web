@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="normalized.css" rel="stylesheet" />
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <main>
+
+       <!-- Sign up for free banner -->
+       <div class="banner"><b>Sign up for free!</b></div>
+
+      <form>
+         <!-- Entering a name -->
+        <h1>Sign Up</h1>
+        <label for="first_name"><b>First Name</b></label>
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          placeholder="Enter your first name"
+        />
+        <label for="last_name"><b>Last Name</b></label>
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          placeholder="Enter your last name"
+        />
+        
+        <!-- Entering an email -->
+        <label for="Email"><b>Email</b></label>
+        <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter your Email"
+        />
+
+        <!-- Creating a password -->
+        <label for="password"><b>Password</b></label>
+        <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        />
+        <br>
+        <!-- Gender selection -->
+        <label for="gender"><b>Gender</b>
+        <fieldset>         
+          <div class="row">
+              <label for="male"><b>Male</b></label>
+              <input type="radio" id="male" name="gender" />
+            </div>
+            <div class="row">
+              <label for="female"><b>Female</b></label>
+              <input type="radio" id="female" name="gender" />
+            </div>
+            <div class="row">
+              <label for="Non-binary"><b>Non-binary</b></label>
+              <input type="radio" id="Non-binary" name="gender" />
+            </div>
+          </div>
+        </fieldset>
+        <br>
+        
+      <br>
+        <!-- Sign up button -->
+        <button><b>Sign Up</b></button>
+      </form>
+    </main>
+  </body>
+</html>
