@@ -1,0 +1,95 @@
+h1 {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1f1f;
+}
+
+.face {
+  width: 300px;
+  height: 300px;
+  background-color: grey;
+  border-radius: 100%;
+  rotate: 0deg;
+}
+
+.left.eye {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 60px;
+  margin-bottom: -50px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.right.eye {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 180px;
+}
+
+.mouth {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin: 80px auto;
+
+  transition: border-top-left-radius 500ms, border-top-right 500ms,
+    border-bottom-left-radius 500ms, border-bottom-right-radius 500ms,
+    ease-in-out 500ms;
+}
+
+.face:hover {
+  transition: background-color 500ms, rotate 1000ms, ease-in-out 1000ms;
+  background-color: #ffefd5;
+  rotate: 360deg;
+  cursor: pointer;
+}
+
+.face:hover .mouth {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.thanks {
+  opacity: 0%;
+
+  transition: opacity 500ms, ease-in 1000ms;
+}
+
+.face:hover + .thanks {
+  opacity: 100%;
+}

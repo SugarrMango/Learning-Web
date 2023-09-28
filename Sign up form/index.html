@@ -10,69 +10,85 @@
   </head>
   <body>
     <main>
-
-       <!-- Sign up for free banner -->
-       <div class="banner"><b>Sign up for free!</b></div>
-
       <form>
-         <!-- Entering a name -->
+        <!-- Entering a name -->
         <h1>Sign Up</h1>
-        <label for="first_name"><b>First Name</b></label>
-        <input
-          type="text"
-          id="first_name"
-          name="first_name"
-          placeholder="Enter your first name"
-        />
-        <label for="last_name"><b>Last Name</b></label>
-        <input
-          type="text"
-          id="last_name"
-          name="last_name"
-          placeholder="Enter your last name"
-        />
-        
+
+        <div class="name">
+          <div class="row">
+            <label for="first_name">First Name</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              placeholder="Enter your first name"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="name">
+            <label for="last_name">Last Name</label>
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              placeholder="Enter your last name"
+            />
+          </div>
+        </div>
+
         <!-- Entering an email -->
-        <label for="Email"><b>Email</b></label>
-        <input
-        type="text"
-        id="email"
-        name="email"
-        placeholder="Enter your Email"
-        />
+        <div class="row">
+          <div class="email-pass">
+            <label for="Email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your Email"
+            />
+          </div>
+        </div>
 
         <!-- Creating a password -->
-        <label for="password"><b>Password</b></label>
-        <input
-        type="text"
-        id="password"
-        name="password"
-        placeholder="Enter your password"
-        />
-        <br>
+        <div class="row">
+          <div class="email-pass">
+            <label for="password">Password</label>
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+          </div>
+        </div>
+
         <!-- Gender selection -->
-        <label for="gender"><b>Gender</b>
-        <fieldset>         
+        <fieldset>
+          <legend>Gender</legend>
+          <div class="optionbutton"></div>
           <div class="row">
-              <label for="male"><b>Male</b></label>
-              <input type="radio" id="male" name="gender" />
-            </div>
-            <div class="row">
-              <label for="female"><b>Female</b></label>
-              <input type="radio" id="female" name="gender" />
-            </div>
-            <div class="row">
-              <label for="Non-binary"><b>Non-binary</b></label>
-              <input type="radio" id="Non-binary" name="gender" />
-            </div>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" />
+          </div>
+          <div class="row">
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" />
+          </div>
+          <div class="row">
+            <label for="Non-binary">Non-binary</label>
+            <input type="radio" id="Non-binary" name="gender" />
           </div>
         </fieldset>
-        <br>
-        
-      <br>
+
         <!-- Sign up button -->
-        <button><b>Sign Up</b></button>
+        <button>Sign Up</button>
       </form>
+
+      <!-- Sign up for free banner -->
+      <div class="banner">
+        <h1>Sign up for free!</h1>
+      </div>
     </main>
   </body>
 </html>
