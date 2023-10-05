@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   gap: 20px;
   background-image: url("cloud2.png");
+  background-size: cover;
   /*background-color:#a3c7d1;*/
 }
 
@@ -16,9 +17,13 @@ header {
 
 main {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex: 1;
+}
+
+.stats {
+  text-align: center;
 }
 
 .board {
@@ -48,11 +53,43 @@ main {
   border-radius: 0;
 }
 
-.snake {
-  /* background-color: #75685b;*/
-  background-image: url("camo.jpeg");
-  border-radius: 100%;
+.snake-head,
+.snake-tail {
+  background-color: #75685b;
+  /* background-image: url("camo.jpg"); */
+  /* background-size: 100px 100px; */
+  /* background-repeat: no-repeat; */
+  /* border-radius: 100%; */
 }
+
+.snake-head {
+  background-image: linear-gradient(rgb(212, 172, 172), rgb(117, 104, 91));
+}
+
+.snake-body {
+  background-color: #75685b;
+  background-image: url("white-dot.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bottom-left-rounded {
+  border-bottom-left-radius: 15px;
+}
+
+.bottom-right-rounded {
+  border-bottom-right-radius: 15px;
+}
+
+.top-left-rounded {
+  border-top-left-radius: 15px;
+}
+
+.top-right-rounded {
+  border-top-right-radius: 15px;
+}
+
 /* #FFF1C5*
   */
 

@@ -13,13 +13,13 @@ function getIndex(r, c) {
   return 20 * r + 1 * c;
 }
 
-function changeType(position, type) {
+function changeType(position, ...types) {
   let index = getIndex(position[0], position[1]);
   let cell = board.children.item(index);
   if (!cell) {
     return;
   }
-  cell.className = `cell ${type}`;
+  cell.className = `cell ${types.join(" ")}`;
 }
 
 function generatePosition() {
@@ -29,7 +29,9 @@ function generatePosition() {
 }
 
 const FRUIT_TYPE = "fruit";
-const SNAKE_TYPE = "snake";
+const SNAKE_BODY_TYPE = "snake-body";
+const SNAKE_HEAD_TYPE = "snake-head";
+const SNAKE_TAIL_TYPE = "snake-tail";
 const DEFAULT_TYPE = "default";
 
 let fruit, snake;
@@ -45,11 +47,111 @@ function repaint() {
     }
   }
 
-  for (let x of snake) {
-    changeType(x, SNAKE_TYPE);
+  // for i in range(len(snake)):
+  for (let i = 1; i < snake.length - 1; i++) {
+    let curCell = snake[i];
+    let prevCell = snake[i - 1];
+    let nextCell = snake[i + 1];
+
+    // i-1     i     i+1
+    // prev    ^     next
+
+    if (
+      (prevCell[0] === curCell[0] - 1 && nextCell[1] === curCell[1] + 1) ||
+      (nextCell[0] === curCell[0] - 1 && prevCell[1] === curCell[1] + 1)
+    ) {
+      changeType(curCell, SNAKE_BODY_TYPE, "bottom-left-rounded");
+    } else if (
+      (prevCell[0] === curCell[0] - 1 && nextCell[1] === curCell[1] - 1) ||
+      (nextCell[0] === curCell[0] - 1 && prevCell[1] === curCell[1] - 1)
+    ) {
+      changeType(curCell, SNAKE_BODY_TYPE, "bottom-right-rounded");
+    } else if (
+      (prevCell[0] === curCell[0] + 1 && nextCell[1] === curCell[1] + 1) ||
+      (nextCell[0] === curCell[0] + 1 && prevCell[1] === curCell[1] + 1)
+    ) {
+      changeType(curCell, SNAKE_BODY_TYPE, "top-left-rounded");
+    } else if (
+      (prevCell[0] === curCell[0] + 1 && nextCell[1] === curCell[1] - 1) ||
+      (nextCell[0] === curCell[0] + 1 && prevCell[1] === curCell[1] - 1)
+    ) {
+      changeType(curCell, SNAKE_BODY_TYPE, "top-right-rounded");
+    } else {
+      changeType(curCell, SNAKE_BODY_TYPE);
+    }
   }
 
-  changeType(fruit, FRUIT_TYPE);
+  // snake-head
+  if (direction === "up") {
+    changeType(
+      snake[0],
+      SNAKE_HEAD_TYPE,
+      "top-left-rounded",
+      "top-right-rounded"
+    );
+  } else if (direction === "left") {
+    changeType(
+      snake[0],
+      SNAKE_HEAD_TYPE,
+      "top-left-rounded",
+      "bottom-left-rounded"
+    );
+  } else if (direction === "right") {
+    changeType(
+      snake[0],
+      SNAKE_HEAD_TYPE,
+      "top-right-rounded",
+      "bottom-right-rounded"
+    );
+  } else if (direction === "down") {
+    changeType(
+      snake[0],
+      SNAKE_HEAD_TYPE,
+      "bottom-left-rounded",
+      "bottom-right-rounded"
+    );
+  } else {
+    changeType(snake[0], SNAKE_HEAD_TYPE);
+  }
+
+  // snake-tail
+ 
+
+  if (direction === "up") {
+    changeType(
+      snake[snake.length - 1],
+      SNAKE_TAIL_TYPE,
+      "bottom-left-rounded",
+      "bottom-right-rounded"
+    );
+  } else if (direction === "left") {
+    changeType(
+      snake[snake.length - 1],
+      SNAKE_TAIL_TYPE,
+      "top-right-rounded",
+      "bottom-right-rounded"
+    );
+ } else if (direction === "right") {
+   changeType(
+     snake[snake.length - 1],
+     SNAKE_TAIL_TYPE,
+     "top-left-rounded",
+     "bottom-left-rounded"
+  ); 
+} else if (direction === "down") {
+    changeType(
+      snake[snake.length - 1],
+      SNAKE_TAIL_TYPE,
+      "top-left-rounded",
+      "top-right-rounded"
+    );
+}
+  else {
+      changeType(snake[snake.length - 1], SNAKE_TAIL_TYPE);
+  }
+
+  
+changeType(fruit, FRUIT_TYPE);
 }
 
 function setTimer(t) {
