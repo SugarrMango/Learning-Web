@@ -1,20 +1,3 @@
-body {
-  padding: 20px;
-  min-height: 100vh;
-  margin: 0px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-image: url("cloud2.png");
-  background-size: cover;
-  /*background-color:#a3c7d1;*/
-}
-
-header {
-  text-align: center;
-}
-
 main {
   display: flex;
   justify-content: space-evenly;
@@ -30,7 +13,7 @@ main {
   width: 800px;
   height: 800px;
   border: 10px solid #b39364;
-  background-image: url("flower.png");
+  background-image: url("assets/flower.png");
   /* background-color: #afd1a3;*/
   /* border-width: 4px;
     border-style: solid;
@@ -68,7 +51,7 @@ main {
 
 .snake-body {
   background-color: #75685b;
-  background-image: url("white-dot.png");
+  background-image: url("assets/white-dot.png");
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -96,7 +79,7 @@ main {
 .fruit {
   /* background-color: green; */
   /* border-radius: 100%; */
-  background-image: url("strawberry.png");
+  background-image: url("assets/strawberry.png");
   background-size: contain;
 }
 
@@ -109,21 +92,37 @@ main {
   font-weight: bold;
 }
 
-h1 {
-  font-family: sans-serif;
-  color: #45372b;
-  -webkit-text-stroke-color: #faf1d9;
-  -webkit-text-stroke-width: 1px;
-  font-size: 80px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.counter {
+.points {
   color: #45372b;
   font-size: 50px;
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.modal-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  gap: 30px;
+}
+
+.lose-modal .stats {
+  color: #e8e8e8;
+  font-size: 24px;
+  font-family: "Rubik", sans-serif;
 }

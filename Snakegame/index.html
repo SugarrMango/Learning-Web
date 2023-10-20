@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="menu.css" />
   </head>
   <body>
     <header>
       <h1>Snake game</h1>
     </header>
     <main>
-      <div class="board">
-        <!-- 400 divs inside, each one is a cell -->
-      </div>
-      <div class="stats">
-        <p class="counter">0</p>
-        <p class="timer">00:00</p>
-      </div>
+      <a href="/game.html" class="button">Play</a>
+      <a href="/rules.html" class="button">Rules</a>
+      <a href="/" class="button quit">Quit</a>
     </main>
-    <script src="main.js"></script>
+
+    <script>
+      const quitButton = document.querySelector(".quit");
+      quitButton.addEventListener("click", () => {
+        window.close(``, `_parent`, ``);
+      });
+    </script>
   </body>
 </html>
