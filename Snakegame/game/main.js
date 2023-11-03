@@ -38,6 +38,7 @@ let direction = "none";
 let moveInterval;
 let isGameRunning = false;
 let isGamePaused = false;
+let difficulty;
 
 function applyTurn(cell, direction, type) {
   if (direction === "up") {
@@ -101,6 +102,8 @@ function repaint() {
 }
 
 function setup() {
+  difficulty = Number(localStorage.getItem("difficulty"));
+
   fruit = generatePosition(); // [r, c]
   snake = [generatePosition()];
 
@@ -109,7 +112,13 @@ function setup() {
   resetTimer();
   startTimer();
 
-  moveInterval = setInterval(move, 100);
+  // level 1: 180
+  // level 2: 150
+  // level 3: 120
+  // level 4: 90
+  // level 5: 60
+
+  moveInterval = setInterval(move, 180 - 30 * (difficulty - 1)); // 1/10th of a second
   direction = "none";
   isGameRunning = true;
   pauseMenuElement.style.display = "none";
@@ -190,13 +199,21 @@ function lose() {
   const minutes = Math.floor(timer / 60);
   const seconds = timer % 60;
 
+  // points = getPoints()
+  // timer = getTimer()
+
+  const str = localStorage.getItem("leaderboard");
+  const store = str ? JSON.parse(str) : [];
+  store.push({ points: getPoints(), time: timer });
+  localStorage.setItem("leaderboard", JSON.stringify(store));
+
   statsText.textContent = `You got ${getPoints()} points in ${minutes} minutes and ${seconds} seconds`;
   loseMenuElement.style.display = "flex";
 }
 
 function eatFruit() {
   fruit = generatePosition();
-  increasePoints(1);
+  increasePoints(difficulty);
 
   while (snake.some((x) => arePositionsEqual(x, fruit))) {
     fruit = generatePosition();

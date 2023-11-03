@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap");
 
+* {
+  font-family: "Rubik", sans-serif;
+}
+
 body {
   padding: 20px;
   min-height: 100vh;
@@ -17,7 +21,6 @@ header {
 }
 
 h1 {
-  font-family: "Rubik", sans-serif;
   color: #45372b;
   -webkit-text-stroke-color: #faf1d9;
   -webkit-text-stroke-width: 1px;
@@ -28,7 +31,7 @@ h1 {
 }
 
 .button {
-  min-width: 400px;
+  min-width: 450px;
   padding: 20px 40px;
   font-size: 48px;
   text-align: center;

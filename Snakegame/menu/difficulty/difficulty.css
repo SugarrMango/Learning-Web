@@ -75,11 +75,36 @@ option {
   z-index: -1;
 }
 
-span {
+.difficulty-name {
   font-size: 60px;
   color: #45372b;
   -webkit-text-stroke-color: #96887e;
   -webkit-text-stroke-width: 2px;
   font-weight: bolder;
   font-family: "Rubik", sans-serif;
+}
+
+.difficulty-description {
+  display: block;
+  max-width: 500px;
+  height: 200px;
+  font-size: 32px;
+  text-align: center;
+  color: #45372b;
+  -webkit-text-stroke-color: #96887e;
+  -webkit-text-stroke-width: 2px;
+  font-weight: bolder;
+  font-family: "Rubik", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  gap: 20px;
+}
+
+nav > .button {
+  flex: 1;
+  min-width: 300px;
 }

@@ -9,10 +9,10 @@
   </head>
   <body>
     <header>
-      <h1>Snake game</h1>
+      <h1>Choose difficulty</h1>
     </header>
     <main>
-      <label for="difficulty">Choose difficulty</label>
+      <!-- <label for="difficulty">Choose difficulty</label> -->
       <input
         type="range"
         id="difficulty"
@@ -30,8 +30,11 @@
       </datalist>
       <span class="difficulty-name">normal</span>
       <span class="difficulty-description">expert</span>
-      <a href="/pages/game/" class="button">Start</a>
-      <a href="/pages/menu/" class="button">Back</a>
+      <nav>
+        <a href="/pages/menu/" class="button">Back</a>
+        <a href="/pages/game/" class="button">Start</a>
+      </nav>
     </main>
+    <script src="difficulty.js"></script>
   </body>
 </html>
