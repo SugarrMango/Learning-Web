@@ -12,24 +12,50 @@
       <h1>Choose difficulty</h1>
     </header>
     <main>
-      <!-- <label for="difficulty">Choose difficulty</label> -->
-      <input
-        type="range"
-        id="difficulty"
-        name="difficulty"
-        min="1"
-        max="5"
-        list="difficulties"
-      />
-      <datalist id="difficulties">
-        <option value="1" label="1"></option>
-        <option value="2" label="2"></option>
-        <option value="3" label="3"></option>
-        <option value="4" label="4"></option>
-        <option value="5" label="5"></option>
-      </datalist>
-      <span class="difficulty-name">normal</span>
-      <span class="difficulty-description">expert</span>
+      <header class="tabs">
+        <div class="tab tab-classic">Classic</div>
+        <div class="tab tab-survival">Survival</div>
+      </header>
+      <div class="content content-classic">
+        <input
+          type="range"
+          id="difficulty"
+          name="difficulty"
+          min="1"
+          max="5"
+          list="difficulties"
+        />
+        <datalist id="difficulties">
+          <option value="1" label="1"></option>
+          <option value="2" label="2"></option>
+          <option value="3" label="3"></option>
+          <option value="4" label="4"></option>
+          <option value="5" label="5"></option>
+        </datalist>
+        <span class="difficulty-name">normal</span>
+        <span class="difficulty-description">expert</span>
+      </div>
+
+      <div class="content content-survival">
+        <input
+          type="range"
+          id="difficulty"
+          name="difficulty"
+          min="1"
+          max="5"
+          list="difficulties"
+        />
+        <datalist id="difficulties">
+          <option value="1" label="1"></option>
+          <option value="2" label="2"></option>
+          <option value="3" label="3"></option>
+          <option value="4" label="4"></option>
+          <option value="5" label="5"></option>
+        </datalist>
+        <span class="difficulty-name">normal</span>
+        <span class="difficulty-description">expert</span>
+      </div>
+
       <nav>
         <a href="/pages/menu/" class="button">Back</a>
         <a href="/pages/game/" class="button">Start</a>

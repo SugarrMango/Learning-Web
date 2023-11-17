@@ -14,7 +14,13 @@ function setup() {
   const str = localStorage.getItem("leaderboard");
   const store = str ? JSON.parse(str) : [];
 
-  for (let record of store) {
+  // sort store
+  // Your code here
+  store.sort((low, high) => high.points - low.points);
+
+  let topRecords = store.slice(0, 10);
+   
+  for (let record of topRecords) {
     addRecord(record.points, record.time);
   }
   // addRecord(100, 50);

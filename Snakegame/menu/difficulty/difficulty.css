@@ -7,6 +7,33 @@ main {
   gap: 30px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  width: 200px;
+  padding: 16px;
+  border: 2px solid #45372b;
+}
+
+.tab[active="true"],
+.tab:hover {
+  background-color: #967950;
+  color: #e8e8e8;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
 label {
   font-size: 60px;
   color: #45372b;

@@ -7,8 +7,8 @@ main {
 }
 
 .leaderboard {
-  width: 400px;
-  height: 400px;
+  width: max-content;
+  height: 500px;
   background-color: #967950;
   border-style: solid;
   border-width: 5px;
@@ -16,9 +16,15 @@ main {
   border-color: #45372b;
   color: #e8e8e8;
   padding: 30px;
-  text-align: center;
+  text-align: left;
   line-height: 2;
   font-size: 20px;
   -webkit-text-stroke-width: 0.4px;
   -webkit-text-stroke-color: #f1e4c9;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-position: inside;
 }

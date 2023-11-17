@@ -33,7 +33,7 @@ const SNAKE_HEAD_TYPE = "snake-head";
 const SNAKE_TAIL_TYPE = "snake-tail";
 const DEFAULT_TYPE = "default";
 
-let fruit, snake;
+let fruits, snake;
 let direction = "none";
 let moveInterval;
 let isGameRunning = false;
@@ -98,13 +98,19 @@ function repaint() {
     applyTurn(snake[snake.length - 1], tailDirection, SNAKE_TAIL_TYPE);
   }
 
-  changeType(fruit, FRUIT_TYPE);
+  // for x in fruits:
+  //   changeType(x, FRUIT_TYPE)
+  for (let [index, fruit] of fruits.entries()) {
+    // fruit-0 or fruit-1
+    // fruit-index
+    changeType(fruit, FRUIT_TYPE, `${FRUIT_TYPE}-${index}`);
+  }
 }
 
 function setup() {
   difficulty = Number(localStorage.getItem("difficulty"));
 
-  fruit = generatePosition(); // [r, c]
+  fruits = [generatePosition(), generatePosition()]; // [r, c]
   snake = [generatePosition()];
 
   resetPoints();
@@ -211,12 +217,13 @@ function lose() {
   loseMenuElement.style.display = "flex";
 }
 
-function eatFruit() {
-  fruit = generatePosition();
+function eatFruit(index) {
+  fruits[index] = generatePosition();
   increasePoints(difficulty);
 
-  while (snake.some((x) => arePositionsEqual(x, fruit))) {
-    fruit = generatePosition();
+  // TODO
+  while (snake.some((x) => arePositionsEqual(x, fruits[index]))) {
+    fruits[index] = generatePosition();
   }
 }
 
@@ -233,9 +240,22 @@ function move() {
     return;
   }
 
-  if (arePositionsEqual(newPosition, fruit)) {
-    eatFruit();
-  } else {
+  let isEatingAFruit = false;
+
+  /*
+  for (const [i, value] of myArray.entries()) {
+    console.log('%d: %s', i, value);
+  }
+  */
+
+  for (let [index, fruit] of fruits.entries()) {
+    if (arePositionsEqual(newPosition, fruit)) {
+      isEatingAFruit = true;
+      eatFruit(index);
+    }
+  }
+
+  if (!isEatingAFruit) {
     // Before: snake = [ [3, 4], [4, 5], [2, 6], [7, 8] ]
     // After: snake = [ [3, 4], [4, 5], [2, 6] ]
     snake.pop();

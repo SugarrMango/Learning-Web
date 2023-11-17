@@ -79,8 +79,15 @@ main {
 .fruit {
   /* background-color: green; */
   /* border-radius: 100%; */
-  background-image: url("/assets/strawberry.png");
   background-size: contain;
+}
+
+.fruit-0 {
+  background-image: url("/assets/strawberry.png");
+}
+
+.fruit-1 {
+  background-image: url("/assets/grape.png");
 }
 
 .timer {
